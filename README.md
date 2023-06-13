@@ -1,6 +1,6 @@
 # Indian Rupee value in US Dollar
 
-This code will prompt you for a year from 2010 and outputs a graph of the Indian Rupee's value in US Dollars throughout that year. This program extracst data from <a href = "https://www.exchangerates.org.uk/INR-USD-spot-exchange-rates-history-2010.html">this website</a>. This is a great website as it not only includes exchange rates values from 2010, but every year after it too. The even better part is that it has the rate for everyday of each year!
+This code will prompt you for a year from 2010 and outputs a graph of the Indian Rupee's value in US Dollars throughout that year. This program extracts data from <a href = "https://www.exchangerates.org.uk/INR-USD-spot-exchange-rates-history-2010.html">this website</a>. This is a great website as it not only includes exchange rates values from 2010, but every year after it too. The even better part is that it has the rate for everyday of each year!
 
 ## How the program works
 
