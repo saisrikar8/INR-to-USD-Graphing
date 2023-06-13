@@ -159,4 +159,12 @@ Now that you have downloaded all the required packages, you can start playing ar
 
 Let's run the code first:
 
+<figure>
+    <img src = "./Screenshot 2023-06-12 230522.png" alt = "Figure 1">
+    <figcaption>The picture above shows the input prompt for the year of the exchange rate data. Let's enter 2021.</figcaption>
+</figure>
 
+<figure>
+    <img src = "./Figure_1.png" alt = "Figure 2">
+    <figcaption>The picture above shows the resulting output graph.</figcaption>
+</figure>
