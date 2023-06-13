@@ -10,7 +10,7 @@ class ExchangeRate:
 
     def __init__(self, year):
         self.year = year
-        self.rates = self.getExchangeRatesByDay(year)
+        self.rates = self.getExchangeRatesByDay(self, year)
     def getExchangeRatesByDay(newYear):
         url = 'https://www.exchangerates.org.uk/INR-USD-spot-exchange-rates-history-'+ str(newYear) + '.html'
         website = urllib.request.urlopen(url)
