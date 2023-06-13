@@ -170,3 +170,64 @@ Let's run the code first:
     <img src = "./Figure_1.png" alt = "Figure 2">
     <figcaption>The picture above shows the resulting output graph.</figcaption>
 </figure>
+
+## Other Methods
+
+A majority of the methods in the `ExchangeRate` and `Graph2D` classes have been used in the program. However, there are still some methods which can be very useful as well. This section will allow you to understand how to use those methods, so you can use them yourself.
+
+### ExchangeRate Class Methods
+
+First, let's cover the methods in the `ExchangeRate` class. These methods will alter the data or how the graph looks.
+
+#### graphMonthExchangeRateAsPoints()
+
+This method is similar to the `graphMonthExchangeRateAsLines()` method because it generates the exact same data. However, the one difference is that the graph is composed a little differently from the `graphMonthExchangeRateAsLines()` method. This is because the method outputs a scatter plot rather than a line graph. You will gain a better understanding about how the graph is produce in [the `Graph2D` section](graph2dmethods). Here is the code for the `graphMonthExchangeRateAsPoints()` method:
+
+```python
+def graphMonthExchangeRateAsPoints(self, type = DataSetElement.AVERAGE):
+        y_values = list()
+        if type == DataSetElement.AVERAGE:
+            y_values = [val*100.0 for val in self.getMonthAvgValues()]
+        elif type == DataSetElement.BEGIN:
+            y_values = [val*100.0 for val in self.getMonthBeginValues()]
+        else:
+            y_values = [val*100.0 for val in self.getMonthEndValues()]
+        newGraph = Graph2D(list(range(1, len(y_values) + 1)), y_values, 'INR to USD Exchange Rates in ' + str(self.year), "Month", 'One Rupee In Dollars(cents)')
+        newGraph.scatterPlot()
+```
+
+#### graphDaysInMonthExchangeRatesAsLines()
+
+This method is also similar to the `graphMonthExchangeRateAsLines()` method. In this case, a line graph is created, but this method takes the exchange rate of everyday in an individual month rather looking at a whole year. The `graphDaysInMonthExchangeRatesAsLines()` method takes the parameter of the month that you want the graph to be about. The code below shows the definition of this method.
+
+```python
+def graphDaysInMonthExchangeRatesAsLines(self, month):
+        monthRatesByDay = [self.rates[month][day]*100.0 for day in self.rates[month]]
+        newGraph = Graph2D(list(range(len(self.rates[month]))), monthRatesByDay, 'INR to USD Exchange Rates in ' + str(month) + ' ' + str(self.year), 'Day', 'One Rupee In Dollars(cents)')
+        newGraph.lineGraph()
+```
+
+#### graphDaysInMonthExchangeRatesAsPoints()
+
+The `graphDaysInMonthExchangeRatesAsPoints()` method takes the data of one individual month and graphs it as a scatter plot. The parameter of this method is the month that the data should be about.
+
+```python
+def graphDaysInMonthExchangeRatesAsLines(self, month):
+        monthRatesByDay = [self.rates[month][day]*100.0 for day in self.rates[month]]
+        newGraph = Graph2D(list(range(len(self.rates[month]))), monthRatesByDay, 'INR to USD Exchange Rates in ' + str(month) + ' ' + str(self.year), 'Day', 'One Rupee In Dollars(cents)')
+        newGraph.lineGraph()
+```
+
+<h3 id = "graph2dmethods">Graph2D Class Methods</h3>
+
+There is only one more method that hasn't been covered for the `Graph2D` methods.
+
+#### scatterPlot()
+
+In the previous section, we explored the methods of the `ExchangeRate` class. A lot of those methods change how the graph is portrayed. As mentioned earlier, the `graphMonthExchangeRateAsLines()` method uses the `lineGraph()` method of the `ExchangeRate` class to produce a line graph. The `graphMonthExchangeRateAsPoints()` produces a scatter plot with all the data being placed on the graph as points. The `scatterPlot()` method of the `Graph2D` class was implemented in the `graphMonthExchangeRateAsPoints()` method. This method implements the `scatter()` method of the `matplotlib` library to create a graph. Here is the code for this method:
+
+```python
+def scatterPlot(self):
+        graph.scatter(self.x_values, self.y_values, marker = 'x', c = 'r')
+        graph.show()
+```
