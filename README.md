@@ -4,7 +4,7 @@ This code will prompt you for a year from 2010 and outputs a graph of the Indian
 
 ## How the program works
 
-This isn't a complex program. I only needed to create two classes and an enum(just to make my code shorter). Here is a breakdown of the steps before I go a little more into detail:
+This isn't a complex program. I only needed to create two classes and an enum(just to make my code shorter). Here is a breakdown of the steps before we go into a little more detail:
 
 1. An object of class `ExchangeRate` is created with the inputted parameter of the year.
 2. The `ExchangeRate.graphMonthExchangeRateAsLines()` method is called.
@@ -137,7 +137,7 @@ class Graph2D:
         graph.ylabel(self.y_title)
 ```
 
-The method stores inputted parameters ands sets the graph's title and labels the x and y axes. 
+The method stores inputted parameters and sets the graph's title and labels the x and y axes. 
 
 The last step of the `graphMonthExchangeRateAsLines()` is calling the `lineGraph()` method. Since all the graph's properties are defined in the constructor method, the method will implement the `plot()` method of the `matplotlib` library to construct the graph. Here is the code for the `lineGraph()` method:
 
@@ -151,9 +151,11 @@ You can now run the code and try out different values for yourself. However, bef
 
 If you already have `pip` installed, you can skip the first step.
 
-*`pip install pip`
-*`pip install matplotlib`
-*`pip install bs4`
+1. `pip install pip`
+
+2. `pip install matplotlib`
+
+3. `pip install bs4`
 
 Now that you have downloaded all the required packages, you can start playing around with the code. There are also other methods that allow you to graph the data in different ways.
 
