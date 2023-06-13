@@ -181,7 +181,7 @@ First, let's cover the methods in the `ExchangeRate` class. These methods will a
 
 #### graphMonthExchangeRateAsPoints()
 
-This method is similar to the `graphMonthExchangeRateAsLines()` method because it generates the exact same data. However, the one difference is that the graph is composed a little differently from the `graphMonthExchangeRateAsLines()` method. This is because the method outputs a scatter plot rather than a line graph. You will gain a better understanding about how the graph is produce in [the `Graph2D` section](graph2dmethods). Here is the code for the `graphMonthExchangeRateAsPoints()` method:
+This method is similar to the `graphMonthExchangeRateAsLines()` method because it generates the exact same data. However, the one difference is that the graph is composed a little differently from the `graphMonthExchangeRateAsLines()` method. This is because the method outputs a scatter plot rather than a line graph. You will gain a better understanding about how the graph is produce in [the `Graph2D` section](#graph2dmethods). Here is the code for the `graphMonthExchangeRateAsPoints()` method:
 
 ```python
 def graphMonthExchangeRateAsPoints(self, type = DataSetElement.AVERAGE):
